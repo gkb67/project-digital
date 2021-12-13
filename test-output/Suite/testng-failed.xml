@@ -13,18 +13,6 @@
       </class> <!-- TestRedirection -->
     </classes>
   </test> <!-- FirefoxTestCases(failed) -->
-  <test thread-count="5" parallel="tests" name="ChromeTestCases(failed)">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="TestRedirection">
-        <methods>
-          <include name="redirectionWithoutDefaultColor"/>
-          <include name="setup"/>
-          <include name="quitDriver"/>
-        </methods>
-      </class> <!-- TestRedirection -->
-    </classes>
-  </test> <!-- ChromeTestCases(failed) -->
   <test thread-count="5" parallel="tests" name="SafariTestCases(failed)">
     <parameter name="browser" value="safari"/>
     <classes>
@@ -37,4 +25,16 @@
       </class> <!-- TestRedirection -->
     </classes>
   </test> <!-- SafariTestCases(failed) -->
+  <test thread-count="5" parallel="tests" name="ChromeTestCases(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="TestRedirection">
+        <methods>
+          <include name="redirectionWithoutDefaultColor"/>
+          <include name="setup"/>
+          <include name="quitDriver"/>
+        </methods>
+      </class> <!-- TestRedirection -->
+    </classes>
+  </test> <!-- ChromeTestCases(failed) -->
 </suite> <!-- Failed suite [Suite] -->
