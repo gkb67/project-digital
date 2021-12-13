@@ -50,13 +50,10 @@ public class TestRedirection {
 	@Test
 	public void redirectionWithDefaultColor() throws InterruptedException {
 		String expectedLink = "https://www.vanmoof.com/en-NL/s3";
-
-		driver.get(link);
-		driver.manage().window().maximize();
-		Thread.sleep(3000);
+		driver.get(link); // To open the URL
+		Thread.sleep(3000); // To suspend the code for a specific amount of time
 		String redirectLink = driver.getCurrentUrl();
 		Assert.assertTrue(redirectLink.contains(expectedLink));
-
 	}
 
 	/*
@@ -65,7 +62,6 @@ public class TestRedirection {
 	@Test
 	public void redirectionWithoutDefaultColor() throws InterruptedException {
 		String expectedLink = "https://www.vanmoof.com/en-NL/s3";
-
 		driver.get(link);
 		Thread.sleep(3000);
 		String redirectLink = driver.getCurrentUrl();
@@ -77,9 +73,10 @@ public class TestRedirection {
 	 * through each list element which corresponds to a link and checks its validity
 	 */
 	@Test
-	public void LinksInThePage() throws FileNotFoundException, Exception {
-
+	public void linksInThePage() throws FileNotFoundException, Exception {
 		driver.get(link);
+		// To create a txt file for displaying all the links with response codes in a
+		// document
 		writer = new PrintWriter("VerifyLinksReport.txt", "UTF-8");
 
 		try {
@@ -89,7 +86,7 @@ public class TestRedirection {
 			for (WebElement e : list) {
 				if (e != null) {
 					String url = e.getAttribute("href");
-					if (url != null && !url.contains("javascript")) {
+					if (url != null) {
 						verifyLinks(url);
 						validLinksCount++;
 					} else {
@@ -115,12 +112,10 @@ public class TestRedirection {
 	public void verifyLinks(String linkUrl) {
 		try {
 			URL url = new URL(linkUrl);
-
 			// Create URL connection and get the response code
 			HttpURLConnection httpURLConnect = (HttpURLConnection) url.openConnection();
 			httpURLConnect.setConnectTimeout(5000);
 			httpURLConnect.connect();
-
 			// Check the status code
 			if (httpURLConnect.getResponseCode() != 200) {
 				invalidLinksCount++;
