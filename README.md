@@ -4,6 +4,7 @@ project-digital
 # Description
 This is a test automation framework to check redirection of the links and verify if the url's in the page opens successfully.
 
+
 # Technologies that are used and run the tests
 - IDE: Eclipse for Java Developers - version: 2021-12 (4.22.0)
 - Web framework for automating tests:  Selenium Webdriver - version: 4.0.0
@@ -38,4 +39,8 @@ Where to find the results as a report?
 - The test results report is in test-output/emailable-report.html file
 - The test results report is in test-output/index.html file
 
+Detailed description of the tests
+- redirectionWithDefaultColor(): It compares two links and checks if the link is redirected to the exact given link.
+- redirectionWithoutDefaultColor(): It compares two links and checks if the link is redirected to the URL which has the given link.
+- linksInThePage(): It checks if each link in the page opens successfully. If all the pages opens successfully, then test passes. A txt file is created including all the links in the page.
 
