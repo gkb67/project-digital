@@ -34,6 +34,8 @@ Where to find the links in a page with the responses?
 - VerifyLinksReport.txt includes all the links with response codes
 
 Where to find the results as a report?
+2 different places to display the test reports:
 - The test results report is in test-output/emailable-report.html file
+- The test results report is in test-output/index.html file
 
 
